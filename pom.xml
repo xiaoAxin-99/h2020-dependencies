@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xinrong.h2020.framework</groupId>
+    <artifactId>h2020-dependencies</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.13.RELEASE</version>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+               <version>1.18.10</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Brixton.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>24.1-jre</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot</artifactId>
+                <version>1.5.3.RELEASE</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+   <!-- 阿里的远程仓库-->
+    <!--<repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>Nexus aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>-->
+
+<!-- 发布到maven 私服,上传jar包   -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <name>maven-snapshots-repository</name>
+            <url>http://127.0.0.1:10000/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>maven-releases</id>
+            <name>maven-releases-repository</name>
+            <url>http://127.0.0.1:10000/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
+
+
+</project>
